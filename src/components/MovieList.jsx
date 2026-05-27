@@ -27,6 +27,9 @@ function MovieList() {
 
     return (
         <>
+
+            <h2>Number of movies: {moviesToDisplay.length}</h2>
+
             {moviesToDisplay.map((movieObj, i, arr) => {
                 return (
                     <div key={movieObj.id} className="card">
