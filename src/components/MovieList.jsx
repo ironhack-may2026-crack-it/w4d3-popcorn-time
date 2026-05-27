@@ -1,10 +1,33 @@
+import { useState } from "react"
+
 import movies from "../data/movies.json"
 
 
+
 function MovieList() {
+
+    const [moviesToDisplay, setMoviesToDisplay] = useState(movies)
+
+
+    const deleteMovie = (movieId) => {
+        // get the new list of movies...
+        const newList = moviesToDisplay.filter((movie, i, arr) => {
+            if (movie.id !== movieId) {
+                return true
+            } else {
+                return false
+            }
+        })
+
+        // update state...
+        // moviesToDisplay = newList // NEVER, NEVER MODIFY STATE DIRECTLY
+        setMoviesToDisplay(newList)
+    }
+
+
     return (
         <>
-            {movies.map((movieObj, i, arr) => {
+            {moviesToDisplay.map((movieObj, i, arr) => {
                 return (
                     <div key={movieObj.id} className="card">
                         <h3>{movieObj.title}</h3>
@@ -14,6 +37,8 @@ function MovieList() {
 
                         <p>Year: {movieObj.year}</p>
                         <p>Rating: {movieObj.rating}</p>
+
+                        <button onClick={() => { deleteMovie(movieObj.id) }}>Delete</button>
                     </div>
                 )
             })}
