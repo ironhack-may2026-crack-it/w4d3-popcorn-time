@@ -1,26 +1,28 @@
 
 .Header {
     border-bottom: 1px solid #333;
-    background-color: rgb(29, 94, 116);
+    background-color: #1D5E74;
     color: #fff;
     padding: 2rem 2rem 1rem;
 }
 
 .Header nav {
-    margin: 1rem auto;
-    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .Header nav a {
+    padding: 0 1rem;
+    border-right: 1px solid #fff;
     color: #fff;
 }
 
 .Header nav a.active {
-    color: orange;
+    color: #f5c518;
 }
 
-.Header h1 {
-    margin: 0 auto; 
+.Header nav a:last-child {
+    border-right: none;
 }
-
 

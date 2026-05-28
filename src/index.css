@@ -36,6 +36,21 @@ body {
   text-align: center;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-weight: bold;
+  font-size: 80%;
+  color: #fff;
+  background-color: #1D5E74;
+
+  p {
+    margin: 0.5em;
+  }
+}
+
 .card {
   max-width: 80%;
   margin: 1rem auto;

@@ -1,6 +1,10 @@
 
 function Footer() {
-    return <h3>Crack it Squad, 2026</h3>
+    return (
+        <footer>
+            <p>Crack it Squad, 2026</p>
+        </footer>
+    )
 }
 
 export default Footer
