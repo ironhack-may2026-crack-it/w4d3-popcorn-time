@@ -2,42 +2,18 @@ import { useState } from "react"
 
 import MovieSummary from "./MovieSummary"
 
-import movies from "../data/movies.json"
 
 
-
-function MovieList() {
-
-    const [moviesToDisplay, setMoviesToDisplay] = useState(movies)
-
-
-    const deleteMovie = (movieId) => {
-        // get the new list of movies...
-        const newList = moviesToDisplay.filter((movie, i, arr) => {
-            if (movie.id !== movieId) {
-                return true
-            } else {
-                return false
-            }
-        })
-
-        // update state...
-        // moviesToDisplay = newList // NEVER, NEVER MODIFY STATE DIRECTLY
-        setMoviesToDisplay(newList)
-    }
-
+function MovieList(props) {
 
     return (
         <>
-
-            <h2>Number of movies: {moviesToDisplay.length}</h2>
-
-            {moviesToDisplay.map((movieObj, i, arr) => {
+            {props.moviesArr.map((movieObj, i, arr) => {
                 return (
-                    <MovieSummary 
+                    <MovieSummary
                         key={movieObj.id}
                         movieDetails={movieObj}
-                        onDelete={deleteMovie}
+                        onDelete={props.onDelete}
                     />
                 )
             })}

@@ -1,6 +1,13 @@
 
+.Header {
+    border-bottom: 1px solid #333;
+    background-color: rgb(29, 94, 116);
+    color: #fff;
+    padding: 2rem 2rem 1rem;
+}
+
 .Header h1 {
-    color: purple;
+    margin: 0 auto; 
 }
 
 

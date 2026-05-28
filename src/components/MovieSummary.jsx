@@ -1,5 +1,5 @@
 
-function MovieSummary(props){
+function MovieSummary(props) {
     return (
         <section className="card">
             <h3>{props.movieDetails.title}</h3>
