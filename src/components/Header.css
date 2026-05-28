@@ -6,6 +6,19 @@
     padding: 2rem 2rem 1rem;
 }
 
+.Header nav {
+    margin: 1rem auto;
+    font-size: 1.2em;
+}
+
+.Header nav a {
+    color: #fff;
+}
+
+.Header nav a.active {
+    color: orange;
+}
+
 .Header h1 {
     margin: 0 auto; 
 }
