@@ -15,6 +15,8 @@ function App() {
 
   const [moviesToDisplay, setMoviesToDisplay] = useState(movies)
 
+  const [title, setTitle] = useState("")
+
 
   const deleteMovie = (movieId) => {
     // get the new list of movies...
@@ -32,9 +34,46 @@ function App() {
   }
 
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const newMovie = {
+      title: title,
+      year: 1999,
+      rating: 10
+    }
+
+    // prepare an array with the new list of movies
+    const newList = [newMovie, ...moviesToDisplay]
+
+    // update the list of movies
+    setMoviesToDisplay(newList)
+
+    // clear form
+    setTitle("")
+  }
+
+
   return (
     <>
       <Header numberOfMovies={moviesToDisplay.length} />
+
+      <section>
+        <form onSubmit={handleSubmit}>
+
+          <input
+            type="text"
+            name="title"
+            placeholder="The Godfather"
+            value={title}
+            onChange={(e) => { setTitle(e.target.value) }}
+          />
+
+          <button>Create movie</button>
+        </form>
+      </section>
+
+
       <Routes>
         <Route path="/" element={<MovieList moviesArr={moviesToDisplay} onDelete={deleteMovie} />} />
         <Route path="/about" element={<About />} />
